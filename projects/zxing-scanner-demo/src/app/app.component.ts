@@ -15,12 +15,12 @@ export class AppComponent {
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo = null;
 //----
-  formatsEnabled: BarcodeFormat[] = [
-    BarcodeFormat.CODE_128,
-    BarcodeFormat.DATA_MATRIX,
-    BarcodeFormat.EAN_13,
-    BarcodeFormat.QR_CODE
-  ];
+  // formatsEnabled: BarcodeFormat[] = [
+  //   BarcodeFormat.CODE_128,
+  //   BarcodeFormat.DATA_MATRIX,
+  //   BarcodeFormat.EAN_13,
+  //   BarcodeFormat.QR_CODE
+  // ];
 
   hasDevices: boolean;
   hasPermission: boolean;
@@ -33,9 +33,9 @@ export class AppComponent {
 
   constructor() {}
 
-  clearResult(): void {
-    this.qrResultString = null;
-  }
+  // clearResult(): void {
+  //   this.qrResultString = null;
+  // }
 
   onCamerasFound(devices: MediaDeviceInfo[]): void {
     this.availableDevices = devices;
@@ -51,32 +51,32 @@ export class AppComponent {
     this.currentDevice = device || null;
   }
 
-  openFormatsDialog() {
-    const data = {
-      formatsEnabled: this.formatsEnabled
-    };
-  }
+  // openFormatsDialog() {
+  //   const data = {
+  //     formatsEnabled: this.formatsEnabled
+  //   };
+  // }
 
   onHasPermission(has: boolean) {
     this.hasPermission = has;
   }
 
-  openInfoDialog() {
-    const data = {
-      hasDevices: this.hasDevices,
-      hasPermission: this.hasPermission
-    };
-  }
+  // openInfoDialog() {
+  //   const data = {
+  //     hasDevices: this.hasDevices,
+  //     hasPermission: this.hasPermission
+  //   };
+  // }
 
-  onTorchCompatible(isCompatible: boolean): void {
-    this.torchAvailable$.next(isCompatible || false);
-  }
+  // onTorchCompatible(isCompatible: boolean): void {
+  //   this.torchAvailable$.next(isCompatible || false);
+  // }
 
-  toggleTorch(): void {
-    this.torchEnabled = !this.torchEnabled;
-  }
+  // toggleTorch(): void {
+  //   this.torchEnabled = !this.torchEnabled;
+  // }
 
-  toggleTryHarder(): void {
-    this.tryHarder = !this.tryHarder;
-  }
+  // toggleTryHarder(): void {
+  //   this.tryHarder = !this.tryHarder;
+  // }
 }
